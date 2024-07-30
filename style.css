@@ -15,6 +15,17 @@ html, body{
     background-color: #030303;
 }
 
+#crsr{
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    border: 1px solid #ffffff95;
+    position: fixed;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+}
+
 #loader{
     width: 100%;
     height: 100%;
@@ -99,4 +110,57 @@ html, body{
     width: 100%;
     height: 100vh;
     background-color: #151515;
+}
+
+#page1 #nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3.9vw 9.1vw;
+}
+
+#nav-part2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+}
+
+#nav-part2 h4{
+    font-size: 1.1vw;
+    font-weight: 500;
+}
+
+.hero{
+    width: 72%;
+    margin-left: 28%;
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 999;
+}
+
+.hero:nth-child(2){
+    margin-top: 13vh;
+}
+
+.hero h1{
+    font-size: 7.6vw;
+    line-height: 7.6vw;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.hero h2{
+    font-size: 7.6vw;
+    line-height: 7.6vw;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.hero h2:hover{
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
 }
