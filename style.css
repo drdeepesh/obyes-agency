@@ -16,7 +16,14 @@ html, body{
     background-color: #151515;
 }
 
-#crsr{
+.mousefollower{
+    border: 2px solid #fff;
+    background-color: rgb(255, 255, 255);
+    scale: 2;
+    mix-blend-mode: difference;
+}
+
+/* #crsr{
     width: 3vw;
     height: 3vw;
     border-radius: 50%;
@@ -25,7 +32,7 @@ html, body{
     z-index: 9999;
     mix-blend-mode: difference;
     transform: translate(-50%, -50%);
-}
+} */
 
 #loader{
     width: 100%;
@@ -117,7 +124,14 @@ html, body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3.9vw 9.1vw;
+    padding: 3.9vw 5vw;
+}
+
+#nav-part1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
 }
 
 #nav-part2{
@@ -132,11 +146,28 @@ html, body{
     font-weight: 500;
 }
 
+#page1-counter{
+    margin-top: 12vh;
+    width: 100%;
+    height: 0vh;
+    position: relative;
+}
+
+#page1-counter::before{
+    content: "01";
+    font-size: 3.3vw;
+    font-weight: 500;
+    font-family: "silk serif";
+    position: absolute;
+    top: 0;
+    left: 22%;
+}
+
 .hero{
     width: 72%;
     margin-left: 28%;
     height: fit-content;
-    overflow: hidden;
+    overflow-y: hidden;
     display: flex;
     align-items: center;
     position: relative;
@@ -152,6 +183,7 @@ html, body{
     line-height: 7.6vw;
     font-weight: 500;
     text-transform: uppercase;
+    position: relative;
 }
 
 .hero h2{
@@ -168,6 +200,20 @@ html, body{
     border-bottom: transparent;
 }
 
+#hero3{
+    z-index: 99;
+    position: relative;
+}
+
+#flag-img{
+    height: 22vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
 #page2{
     height: 100vh;
     width: 100%;
@@ -180,14 +226,16 @@ html, body{
     width: 71.5vw;
     height: 62vh;
     left: 28.5%;
-    /* background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg); */
+    background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 #video-container img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
+    /* position: absolute; */
     /* top: 0; */
 }
 
@@ -195,6 +243,7 @@ html, body{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 0;
 }
 
 #video-cursor{
@@ -203,7 +252,7 @@ html, body{
     height: 11vw;
     border-radius: 50%;
     position: absolute;
-    z-index: 999;
+    z-index: 99;
     top: -10%;
     left: 65%;
     display: flex;
@@ -218,8 +267,290 @@ html, body{
 #page3{
     min-height: 100vh;
     width: 100%;
-    background-color: #424040;
     position: relative;
+}
+
+#page-content{
+    width: 72vw;
+    position: relative;
+    margin-left: 28%;
+}
+
+#page3 h1{
+    font-size: 7.4vw;
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 72vw;
+    margin-left: 28%;
+}
+
+#page3 h1::before{
+    content: "02";
+    position: absolute;
+    font-size: 3.3vw;
+    font-weight: 500;
+    font-family: "silk serif";
+    left: 21%;
+    top: 1%;
+}
+
+#page3 .underline{
+    height: 1.5px;
+    width: 66%;
+    background-color: #fff;
+    margin-top: 2vw;
+    /* width: 72vw; */
+    margin-left: 28%;
+}
+
+#image-div-container{
+    padding: 5vw;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.image-details{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+}
+
+.image-details h2{
+    font-size: 3vw;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.detail-text{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* gap: 5vw; */
+}
+
+.detail-text h5{
+    font-weight: 300;
+    font-size: 1.2vw;
+    margin-top: 3vh;
+    width: 56%;
+}
+
+.detail-text h6{
+    font-weight: 300;
+    font-size: 1.1vw;
+    margin-top: 3vh;
+    width: 44%;
+    text-align: end;
+}
+
+.image-underline{
+    height: 1.5px;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 3vh;
+}
+
+.image-div{
+    width: 30vw;
+    height: 37vw;
+    margin-top: 5vh;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    /* margin: 2vw; */
+}
+
+/* .image-div:nth-child(1){
+    width: 25vw;
+    height: 30vw;
+} */
+
+.image-div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.olga{
+    width: 25vw;
+}
+
+.olga-img{
+    width: 25vw;
+    height: 30vw;
+}
+
+.ochi{
+    margin-top: 16vh;
+}
+
+.eminente{
+    width: 25vw;
+    margin-top: -11vw;
+}
+
+.eminente-img{
+    width: 25vw;
+    height: 30vw;
+
+}
+
+.makhno{
+    margin-top: 8vh;
+}
+
+.page3-circle1{
+    width: 25vw;
+    height: 25vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin-top: 41vh;
+    margin-left: 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.page3-circle1 svg{
+    width: 28%;
+}
+
+.circle-in {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease 0.5s;
+    scale: 0;
+}
+
+.circle-in p {
+    font-size: 1.1vw;
+    font-weight: 600;
+    color: #000;
+    width: 70%;
+    transition: all ease 0.5s;
+    transition-delay: 0.3s;
+    scale: 0;
+    opacity: 0;
+}
+
+.page3-circle1:hover .circle-in {
+    scale: 1;
+}
+
+.page3-circle1:hover p {
+    scale: 1;
+    opacity: 1;
+}
+
+.page3-circle2{
+    width: 25vw;
+    height: 25vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin-top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.page3-circle2 svg{
+    width: 28%;
+    rotate: -45deg;
+}
+
+.page3-circle2:hover .circle-in {
+    scale: 1;
+}
+
+.page3-circle2:hover p {
+    scale: 1;
+    opacity: 1;
+    width: fit-content;
+    font-size: 1.2vw;
+    font-weight: 500;
+}
+
+
+
+.page3-circle3{
+    width: 25vw;
+    height: 25vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin-top: 52vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.page3-circle3 svg{
+    width: 28%;
+    rotate: -90deg;
+}
+
+.page3-circle3:hover .circle-in {
+    scale: 1;
+}
+
+.page3-circle3:hover p {
+    scale: 1;
+    opacity: 1;
+    width: fit-content;
+    font-size: 1.2vw;
+    font-weight: 500;
+}
+
+#all-projects-circle{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page3-circle4{
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    margin-top: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #FFA63D;
+    transition: transform 0.2s ease;
+}
+
+.page3-circle4 p{
+    font-size: 1.2vw;
+    font-weight: 500;
+}
+
+.page3-circle4 span{
+    font-family: "silk serif";
+    font-style: italic;
+}
+
+.page3-circle4:hover{
+    transform: scale(0.9);
 }
 
 #page4{
@@ -227,7 +558,7 @@ html, body{
     width: 100%;
     background-color: #151515;
     position: relative;
-    padding: 5vh 0;
+    padding: 2vh 0;
 }
 
 #page4-content{
@@ -240,6 +571,16 @@ html, body{
     font-size: 7.4vw;
     font-weight: 500;
     text-transform: uppercase;
+}
+
+#page4-content h1::before{
+    content: "03";
+    position: absolute;
+    font-size: 3.3vw;
+    font-weight: 500;
+    font-family: "silk serif";
+    left: -10%;
+    top: 0.5%;
 }
 
 #page4-content .underline{
@@ -319,4 +660,155 @@ html, body{
     margin-top: 3.5vh;
     font-size: 1.1vw;
     font-weight: 300;
+}
+
+#page5 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 3vh 0;
+
+}
+
+.elem {
+    white-space: nowrap;
+    overflow-x: hidden;
+    margin-bottom: -2vw;
+}
+
+.elem h1 {
+    font-size: 7.5vw;
+    -webkit-text-stroke: 1px #fff;
+    font-weight: 300;
+    text-transform: uppercase;
+    /* background-color: red; */
+    color: transparent;
+    display: inline-block;
+    margin-right: 16px;
+    animation-name: marquee;
+    animation-duration: 17s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes marquee {
+    from {
+            transform: translateX(0);
+    }
+
+    to {
+            transform: translateX(calc(-100% - 20px));
+    }
+}
+
+
+.elem2 {
+    white-space: nowrap;
+    overflow-x: hidden;
+    margin-bottom: -2vw;
+}
+
+.elem2 h1 {
+    font-size: 7.5vw;
+    -webkit-text-stroke: 1px #fff;
+    font-weight: 300;
+    text-transform: uppercase;
+    /* background-color: red; */
+    color: transparent;
+    display: inline-block;
+    margin-right: 16px;
+    transform: translateX(calc(-100% - 20px));
+    animation-name: marquee;
+    animation-duration: 18s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+.elem span {
+    font-style: italic;
+    font-family: "silk serif";
+    color: transparent;
+}
+
+.elem2 span {
+    font-style: italic;
+    font-family: "silk serif";
+    color: transparent;
+}
+
+#footer{
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    padding-left: 28vw;
+    margin-top: 3.5vw;
+}
+
+#footer .underline{
+    height: 1.5px;
+    width: 92%;
+    background-color: #fff;
+    margin-top: 2vw;
+}
+
+#footer h1{
+    font-size: 7.5vw;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+}
+
+#footer h1::before {
+    content: "04";
+    position: absolute;
+    font-size: 3.3vw;
+    font-weight: 100;
+    font-family: "silk serif";
+    left: -10%;
+    top: 10%;
+}
+
+#footer-div {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 5vh;
+    margin-bottom: 5vw;
+}
+
+#footer-div h6 {
+    font-size: 1.2vw;
+    margin-bottom: 2vw;
+    font-weight: 500;
+}
+
+.box {
+    width: fit-content;
+}
+
+.box2 {
+    margin-left: 14vw;
+}
+
+.box3 {
+    margin-left: 6vw;
+}
+
+#footer-div h5 {
+    font-size: 2vw;
+    line-height: 2.1vw;
+    font-weight: 300;
+    
+}
+
+#footer>h5{
+    font-weight: 300;
+    font-size: 1.2vw;
+    margin-top: 3vw;
+}
+
+._canvas_container{
+    z-index: 999999 !important;
+    pointer-events: none;
 }
